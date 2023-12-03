@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0) && canShoot && _currentAmmo > 0){
             weapon.Fire();
-            _currentAmmo--;
+            _currentAmmo -= 1;
         }
         else{
             print("I need more boolets");

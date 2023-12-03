@@ -1,12 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class EnemyCollision : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other){ //box collider isTrigger 
-        if(other.transform.tag == "Player"){
-            Player._currentLives--;
+    private void OnTriggerEnter2D(Collider2D other){ 
+        if(other.transform.tag == "Player"){ //if player hits cop they lose a life. 
+            Player._currentLives -= 1;
+            Debug.Log("Cops Caught U");
         }
+
+        if(other.transform.tag == "Bullet"){ //if gun hits cop
+            Destroy(gameObject); 
+            Debug.Log("Killed Cop"); 
+        }
+
     } 
+
+    
 }
