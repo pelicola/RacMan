@@ -16,7 +16,6 @@ public class EnemyFollowPath : MonoBehaviour
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = cop; 
-
         currentWaypoints = startWaypoints;
     }
 

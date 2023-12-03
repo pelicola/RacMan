@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     }
     
     void Update(){
-        print("score " + _score);
+        //print("score " + _score);
         print("ammo " + _currentAmmo);
 
         if(_currentLives > 0){
