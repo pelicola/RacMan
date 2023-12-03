@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -71,6 +73,19 @@ public class Player : MonoBehaviour
 
         LivesUI.text = "Lives: " + _currentLives; 
         CurrentScoreUI.text = "Score: " + _score;
+
+        if(canShoot && _currentAmmo > 0){
+
+
+            AmmoCountUI.gameObject.SetActive(true);
+            AmmoCountUI.color = Color.red;
+            AmmoCountUI.text = "Current Ammo: " + _currentAmmo; 
+        }
+        else if (_currentAmmo <= 0){
+
+            AmmoCountUI.gameObject.SetActive(false); 
+        }
+
     }
 
      void FixedUpdate(){
