@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -23,6 +24,8 @@ public class Player : MonoBehaviour
 
     public int _maxLives = 3;
     public static int _currentLives;
+    
+    public TextMeshProUGUI LivesUI, CurrentScoreUI, AmmoCountUI; 
 
     void Start(){
         InputManager.Init(this); //puts the game controls on the player
@@ -65,6 +68,9 @@ public class Player : MonoBehaviour
             print("I need more boolets");
         }
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        LivesUI.text = "Lives: " + _currentLives; 
+        CurrentScoreUI.text = "Score: " + _score;
     }
 
      void FixedUpdate(){
