@@ -258,6 +258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e25841ae11db348b8106134fd83441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  wGun: {fileID: -2413806693520163455, guid: 5a61879e9e86b584c9478830e4eb024c, type: 3}
+  noGun: {fileID: 21300000, guid: a3fbe8522ded91c4cbdf76cf839f36d5, type: 3}
   _speed: 15
   weapon: {fileID: 1785953890}
   _maxLives: 3
