@@ -9,8 +9,14 @@ public class EnemyFollowPath : MonoBehaviour
     private Transform[] currentWaypoints;
     private int currentWaypointIndex = 0;
 
+    public SpriteRenderer spriteRenderer;
+    public Sprite cop;
+
     void Start()
     {
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = cop; 
+
         currentWaypoints = startWaypoints;
     }
 
