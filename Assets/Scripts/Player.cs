@@ -8,6 +8,10 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public SpriteRenderer spriteRenderer;
+    public Sprite wGun;
+    public Sprite noGun;
+
     [SerializeField] private float _speed;
     private Vector2 _moveDirection;
     private Vector2 mousePosition;
@@ -23,6 +27,9 @@ public class Player : MonoBehaviour
     void Start(){
         InputManager.Init(this); //puts the game controls on the player
         InputManager.SetGameControls();
+
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        ChangeSpriteNoGun();
 
         canShoot = false;
 
@@ -42,7 +49,14 @@ public class Player : MonoBehaviour
         else{
             print("Game Over");
         }
-        
+
+        if(_currentAmmo > 0){
+            ChangeSpriteWGun();
+        }
+        else{
+            ChangeSpriteNoGun();
+        }
+
         if(Input.GetMouseButtonDown(0) && canShoot && _currentAmmo > 0){
             weapon.Fire();
             _currentAmmo--;
@@ -62,5 +76,15 @@ public class Player : MonoBehaviour
 
      public void SetMovementDirection(Vector2 currentDirection){
         _moveDirection = currentDirection;
+    }
+
+    void ChangeSpriteWGun()
+    {
+        spriteRenderer.sprite = wGun; 
+    }
+
+    void ChangeSpriteNoGun()
+    {
+        spriteRenderer.sprite = noGun; 
     }
 }
