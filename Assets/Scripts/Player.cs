@@ -4,6 +4,7 @@ using TMPro;
 using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour
     public static int _currentLives;
     
     public TextMeshProUGUI LivesUI, CurrentScoreUI, AmmoCountUI; 
+    [SerializeField] AudioSource ShootSFX; 
 
     void Start(){
         InputManager.Init(this); //puts the game controls on the player
@@ -45,15 +47,6 @@ public class Player : MonoBehaviour
     }
     
     void Update(){
-        //print("score " + _score);
-        print("ammo " + _currentAmmo);
-
-        if(_currentLives > 0){
-            print("lives " + _currentLives);
-        }
-        else{
-            print("Game Over");
-        }
 
         if(_currentAmmo > 0){
             ChangeSpriteWGun();
@@ -64,11 +57,10 @@ public class Player : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0) && canShoot && _currentAmmo > 0){
             weapon.Fire();
+            ShootSFX.Play(); 
             _currentAmmo -= 1;
         }
-        else{
-            print("I need more boolets");
-        }
+
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         LivesUI.text = "Lives: " + _currentLives; 
@@ -84,6 +76,22 @@ public class Player : MonoBehaviour
         else if (_currentAmmo <= 0){
 
             AmmoCountUI.gameObject.SetActive(false); 
+        }
+
+        if(_currentLives == 0){
+            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            _currentLives = 3; 
+            _score = 0; 
+            _currentAmmo = 0; 
+
+        }
+
+        if(_score == 276 ){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            _currentLives = 3; 
+            _score = 0;
+            _currentAmmo = 0; 
         }
 
     }
