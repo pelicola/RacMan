@@ -5,7 +5,7 @@ public class EnemyFollowPath : MonoBehaviour
     public Transform[] startWaypoints;
     public Transform[] mainWaypoints;
     public float moveSpeed = 5f;
-    public float startDelay = 2f; // Adjust the delay as needed
+    public float startDelay = 2f; 
 
     private Transform[] currentWaypoints;
     private int currentWaypointIndex = 0;
@@ -24,7 +24,7 @@ public class EnemyFollowPath : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Start waypoints array is null or empty. Check your waypoints array.");
+            Debug.LogError("Start waypoints array is null or empty.");
         }
     }
 
@@ -42,10 +42,10 @@ public class EnemyFollowPath : MonoBehaviour
     {
         if (currentWaypoints != null && currentWaypointIndex >= 0 && currentWaypointIndex < currentWaypoints.Length)
         {
-            if (currentWaypoints[currentWaypointIndex] != null) // Check if the current waypoint is not null
+            if (currentWaypoints[currentWaypointIndex] != null) 
             {
                 Vector3 targetPosition = currentWaypoints[currentWaypointIndex].position;
-                targetPosition.z = transform.position.z; // Set the Z-coordinate to be the same as the current position
+                targetPosition.z = transform.position.z; 
 
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
@@ -64,12 +64,12 @@ public class EnemyFollowPath : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("currentWaypoints[currentWaypointIndex] is null. Check your waypoints array.");
+                Debug.LogWarning("currentWaypoints[currentWaypointIndex] is null.");
             }
         }
         else
         {
-            Debug.LogWarning("currentWaypoints array is null or currentWaypointIndex is out of bounds.");
+            Debug.LogWarning("currentWaypoints array is null or currentWaypointIndex is out of bounds");
         }
     }
 
