@@ -1429,7 +1429,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 447, y: -116.78}
+  m_AnchoredPosition: {x: 873.8, y: -521.9}
   m_SizeDelta: {x: 411.939, y: 101.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &92501892
@@ -2954,6 +2954,7 @@ MonoBehaviour:
   LivesUI: {fileID: 951088192}
   CurrentScoreUI: {fileID: 1660865476}
   AmmoCountUI: {fileID: 92501892}
+  ShootSFX: {fileID: 204363187}
 --- !u!212 &204363184
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6988,6 +6989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf50af8403c2be7478cff53f8b9c29ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitByCop: {fileID: 453080836}
 --- !u!114 &453080838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7023,6 +7025,7 @@ MonoBehaviour:
   - {fileID: 340755610}
   - {fileID: 364242424}
   moveSpeed: 6
+  startDelay: 10
   spriteRenderer: {fileID: 0}
   cop: {fileID: 21300000, guid: 9ebefb65efe0dfe45af43b264d2c8aa4, type: 3}
 --- !u!58 &453080839
@@ -8204,7 +8207,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -10045,6 +10048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf50af8403c2be7478cff53f8b9c29ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitByCop: {fileID: 604710658}
 --- !u!114 &604710660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10086,6 +10090,7 @@ MonoBehaviour:
   - {fileID: 1371935184}
   - {fileID: 343121994}
   moveSpeed: 6
+  startDelay: 10
   spriteRenderer: {fileID: 0}
   cop: {fileID: 21300000, guid: 9ebefb65efe0dfe45af43b264d2c8aa4, type: 3}
 --- !u!58 &604710661
@@ -18993,7 +18998,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 439.47, y: -297}
+  m_AnchoredPosition: {x: 11.785522, y: 46.73633}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &951088192
@@ -25719,6 +25724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf50af8403c2be7478cff53f8b9c29ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitByCop: {fileID: 1190499495}
 --- !u!114 &1190499497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25759,6 +25765,7 @@ MonoBehaviour:
   - {fileID: 1333237230}
   - {fileID: 1230432692}
   moveSpeed: 6
+  startDelay: 10
   spriteRenderer: {fileID: 0}
   cop: {fileID: 21300000, guid: 9ebefb65efe0dfe45af43b264d2c8aa4, type: 3}
 --- !u!58 &1190499498
@@ -37832,6 +37839,7 @@ MonoBehaviour:
   - {fileID: 255520462}
   - {fileID: 494095906}
   moveSpeed: 6
+  startDelay: 5
   spriteRenderer: {fileID: 0}
   cop: {fileID: 21300000, guid: 9ebefb65efe0dfe45af43b264d2c8aa4, type: 3}
 --- !u!114 &1658875221
@@ -37846,6 +37854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf50af8403c2be7478cff53f8b9c29ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitByCop: {fileID: 1658875223}
 --- !u!82 &1658875223
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38141,7 +38150,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 458, y: -381}
+  m_AnchoredPosition: {x: 30.313599, y: -49.163574}
   m_SizeDelta: {x: 237.0551, y: 59.2637}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1660865476
@@ -41108,6 +41117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf50af8403c2be7478cff53f8b9c29ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitByCop: {fileID: 1743395211}
 --- !u!114 &1743395213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41151,6 +41161,7 @@ MonoBehaviour:
   - {fileID: 1138920357}
   - {fileID: 1928512650}
   moveSpeed: 6
+  startDelay: 10
   spriteRenderer: {fileID: 0}
   cop: {fileID: 21300000, guid: 9ebefb65efe0dfe45af43b264d2c8aa4, type: 3}
 --- !u!58 &1743395214
